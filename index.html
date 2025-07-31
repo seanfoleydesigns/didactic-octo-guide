@@ -305,6 +305,61 @@
             background: var(--primary-dark) !important;
         }
 
+        .cell.preview-selected {
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .cell.preview-selected::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 4px dashed currentColor;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .cell.preview-light.preview-selected::after {
+            color: #1a1a1a;
+        }
+
+        .cell.preview-dark.preview-selected::after {
+            color: #ffffff;
+        }
+
+        .cell.preview-selected:not(.preview-light):not(.preview-dark)::after {
+            color: #666;
+        }
+
+        .cell.preview-affected {
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .cell.preview-affected::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px dashed currentColor;
+            border-radius: 8px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .cell.preview-light.preview-affected::after {
+            color: #1a1a1a;
+        }
+
+        .cell.preview-dark.preview-affected::after {
+            color: #ffffff;
+        }
+
         .cell.animating {
             animation: flip 0.4s ease-in-out;
         }
@@ -2110,13 +2165,22 @@
                     } else {
                         cell.classList.add('preview-light');
                     }
+                    
+                    // Add preview-affected to adjacent tiles (not the clicked one)
+                    if (pos !== index) {
+                        cell.classList.add('preview-affected');
+                    }
                 });
+                
+                // Add selected indicator to the clicked tile
+                const clickedCell = this.elements.playerGrid.children[index];
+                clickedCell.classList.add('preview-selected');
             },
             
             hidePreview() {
                 const cells = document.querySelectorAll('.cell');
                 cells.forEach(cell => {
-                    cell.classList.remove('preview-dark', 'preview-light');
+                    cell.classList.remove('preview-dark', 'preview-light', 'preview-selected', 'preview-affected');
                 });
                 this.previewIndex = -1;
             },
