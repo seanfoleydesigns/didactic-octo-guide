@@ -1628,8 +1628,17 @@
                 
                 // Load mobile preview preference
                 const savedPreference = this.load('squip-mobile-preview');
-                if (savedPreference !== null && this.isTouchDevice) {
-                    this.mobilePreviewEnabled = savedPreference;
+                if (this.isTouchDevice) {
+                    // For touch devices: default to true if no saved preference exists
+                    if (savedPreference === null) {
+                        this.mobilePreviewEnabled = true;
+                        this.save('squip-mobile-preview', true);
+                    } else {
+                        this.mobilePreviewEnabled = savedPreference;
+                    }
+                } else {
+                    // For non-touch devices: always disabled
+                    this.mobilePreviewEnabled = false;
                 }
                 
                 // Load color preference
