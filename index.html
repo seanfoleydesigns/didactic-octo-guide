@@ -357,6 +357,7 @@
             width: 72px;
             height: 72px;
             touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         button.cell {
@@ -391,10 +392,16 @@
         @media (hover: none) and (pointer: coarse) {
             .cell:focus,
             .cell:focus-visible,
-            .cell:active:not(:active) {
+            .cell:active {
                 transform: none !important;
                 box-shadow: none !important;
                 outline: none !important;
+            }
+            
+            /* Disable hover effects on touch devices */
+            .cell:hover {
+                transform: none !important;
+                box-shadow: none !important;
             }
         }
 
