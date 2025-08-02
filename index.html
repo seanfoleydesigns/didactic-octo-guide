@@ -390,16 +390,17 @@
 
         /* Specific mobile/tablet focus removal */
         @media (hover: none) and (pointer: coarse) {
-            .cell:focus,
-            .cell:focus-visible,
-            .cell:active {
+            /* Only disable effects when NOT in preview mode */
+            .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):focus,
+            .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):focus-visible,
+            .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):active {
                 transform: none !important;
                 box-shadow: none !important;
                 outline: none !important;
             }
             
-            /* Disable hover effects on touch devices */
-            .cell:hover {
+            /* Disable hover effects on touch devices when not in preview */
+            .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):hover {
                 transform: none !important;
                 box-shadow: none !important;
             }
@@ -434,6 +435,13 @@
             .cell:hover {
                 transform: none;
                 box-shadow: none;
+            }
+            
+            /* But allow hover effects during preview mode on mobile */
+            .cell.preview-selected,
+            .cell.preview-affected {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
             }
         }
 
