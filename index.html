@@ -2328,8 +2328,13 @@
                 
                 // Restore the grid state from before the move
                 this.grid = [...lastMove.grid];
-                // Decrement current moves counter
+                // Decrement ONLY current moves counter (total stays the same)
                 this.currentMoves--;
+                
+                // Update the display immediately
+                this.elements.currentMovesCount.textContent = this.currentMoves;
+                // Total moves stays the same
+                this.elements.totalMovesCount.textContent = this.moves;
                 
                 // Re-render the grid
                 this.render();
