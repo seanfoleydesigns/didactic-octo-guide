@@ -1499,12 +1499,12 @@
         <div class="modal">
             <button class="close-btn" onclick="Game.closeTutorial()">&times;</button>
             <h2>How To Play</h2>
-            <p class="subtitle">Turn all tiles to one color in as few moves as possible!</p>
+            <p class="subtitle">Turn all tiles to one color in 5 moves or less!</p>
             
             <div class="tutorial-section">
                 <h3>The Rules</h3>
                 
-                <p class="example-text" style="text-align: left; margin: 0 0 20px 0;">Click any tile to flip it and its adjacent neighbors. Each position has a different pattern - tiles in the center flip in a plus (+) shape, edge tiles flip in a T shape, and corner tiles flip in an L shape. Your goal is to make all tiles the same color!</p>
+                <p class="example-text" style="text-align: left; margin: 0 0 20px 0;">Click any tile to flip it and its adjacent neighbors. Each position has a different pattern - tiles in the center flip in a plus (+) shape, edge tiles flip in a T shape, and corner tiles flip in an L shape. Your goal is to make all tiles the same color in as few moves as possible - <strong>can you solve it in just 5 moves?</strong></p>
                 
                 <div class="example-row">
                     <div class="example-item">
@@ -1557,21 +1557,25 @@
                 </div>
                 
                 <p class="example-text" style="text-align: left; margin: 20px 0; background: rgba(var(--primary-rgb), 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(var(--primary-rgb), 0.3);">
-                    <strong>Tips:</strong> Each tile toggles between the current color and black when flipped. Remember that clicking a tile affects multiple tiles at once! Every daily puzzle starts with a unique pattern - your challenge is to turn all tiles to the selected color.
+                    <strong>Tips:</strong> Each tile toggles between the current color and black when flipped. Remember that clicking a tile affects multiple tiles at once! Every daily puzzle can be solved in exactly 5 moves - finding that perfect solution is the ultimate challenge!
                 </p>
                 
                 <div style="margin-top: 20px;">
+                    <div class="rule-item">
+                        <div class="rule-icon">•</div>
+                        <div class="rule-text">Every puzzle can be solved in exactly <strong>5 moves</strong> - that's the goal!</div>
+                    </div>
                     <div class="rule-item">
                         <div class="rule-icon">•</div>
                         <div class="rule-text">You have <strong>unlimited moves</strong> to find the solution</div>
                     </div>
                     <div class="rule-item">
                         <div class="rule-icon">•</div>
-                        <div class="rule-text"><strong>Current</strong> shows moves in this attempt, <strong>Total</strong> shows all moves</div>
+                        <div class="rule-text"><strong>Current</strong> shows moves in this attempt, <strong>Total</strong> shows all moves today</div>
                     </div>
                     <div class="rule-item">
                         <div class="rule-icon">•</div>
-                        <div class="rule-text"><strong>Undo</strong> reverts your last move</div>
+                        <div class="rule-text"><strong>Undo</strong> reverts your last move (reduces Current by 1)</div>
                     </div>
                     <div class="rule-item">
                         <div class="rule-icon">•</div>
@@ -2623,12 +2627,15 @@
                     return;
                 } else if (!won) {
                     resultText += `❌ Couldn't solve today's puzzle.\n`;
+                    resultText += `(Gave it my best with ${this.moves} moves)\n\n`;
                     resultText += `Try it yourself at https://squip.io`;
                 } else if (this.currentMoves === 5) {
                     resultText += `⭐ PERFECT! Solved in 5 moves!\n`;
+                    resultText += `(Took me ${this.moves} total moves to find it)\n\n`;
                     resultText += `Try and match my score at https://squip.io`;
                 } else {
                     resultText += `✅ Solved in ${this.currentMoves} moves!\n`;
+                    resultText += `(${this.moves} moves total across all attempts)\n\n`;
                     resultText += `Try and beat my score at https://squip.io`;
                 }
                 
