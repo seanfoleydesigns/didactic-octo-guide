@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Squip</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Squip - Daily Grid Puzzle</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Match the target pattern in as few moves as possible! A challenging daily grid puzzle game where clicking tiles flips adjacent neighbors. New puzzle every day!">
+    <meta name="keywords" content="puzzle game, daily puzzle, grid game, logic puzzle, brain teaser, squip, tile flipping game">
+    <meta name="author" content="Squip">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://squip.io">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://squip.io">
+    <meta property="og:title" content="Squip - Daily Grid Puzzle">
+    <meta property="og:description" content="Match the target pattern in as few moves as possible! A challenging daily grid puzzle game. New puzzle every day!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    <meta property="og:site_name" content="Squip">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://squip.io">
+    <meta name="twitter:title" content="Squip - Daily Grid Puzzle">
+    <meta name="twitter:description" content="Match the target pattern in as few moves as possible! A challenging daily grid puzzle game.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#fefefe">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.counter.dev">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Squip",
+      "description": "A challenging daily grid puzzle game where clicking tiles flips adjacent neighbors. Match the target pattern in as few moves as possible!",
+      "url": "https://squip.io",
+      "genre": "Puzzle",
+      "gamePlatform": "Web Browser",
+      "operatingSystem": "Any",
+      "image": "https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "Squip",
+        "name": "Squip",
+        "email": "contact@squip.io"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!-- Analytics -->
+    <script src="https://cdn.counter.dev/script.js" data-id="edb14b17-4009-4579-b33d-6fd7ec0a330e" data-utcoffset="-4"></script>
     
     <!-- Analytics -->
     <script src="https://cdn.counter.dev/script.js" data-id="edb14b17-4009-4579-b33d-6fd7ec0a330e" data-utcoffset="-4"></script>
@@ -228,12 +293,12 @@
 
         #player-grid,
         #target-grid {
-            grid-template-columns: repeat(4, 54px);
-            grid-template-rows: repeat(4, 54px);
-            min-width: 236px;
-            min-height: 236px;
-            max-width: 236px;
-            max-height: 236px;
+            grid-template-columns: repeat(3, 72px);
+            grid-template-rows: repeat(3, 72px);
+            min-width: 232px;
+            min-height: 232px;
+            max-width: 232px;
+            max-height: 232px;
         }
 
         .cell {
@@ -246,8 +311,8 @@
             overflow: hidden;
             display: block;
             box-sizing: border-box;
-            width: 54px;
-            height: 54px;
+            width: 72px;
+            height: 72px;
             touch-action: manipulation;
         }
 
@@ -278,7 +343,6 @@
 
         .cell.dark {
             background: #2d2d2d;
-            transform: scale(0.95);
         }
 
         .cell.dark::before {
@@ -634,8 +698,8 @@
             border-radius: 12px;
             margin: 0 auto;
             width: fit-content;
-            grid-template-columns: repeat(4, 40px);
-            grid-template-rows: repeat(4, 40px);
+            grid-template-columns: repeat(3, 40px);
+            grid-template-rows: repeat(3, 40px);
         }
 
         .solution-cell {
@@ -1085,12 +1149,12 @@
 
         @media (min-width: 501px) {
             .cell {
-                width: 54px !important;
-                height: 54px !important;
-                min-width: 54px !important;
-                min-height: 54px !important;
-                max-width: 54px !important;
-                max-height: 54px !important;
+                width: 72px !important;
+                height: 72px !important;
+                min-width: 72px !important;
+                min-height: 72px !important;
+                max-width: 72px !important;
+                max-height: 72px !important;
             }
         }
 
@@ -1225,23 +1289,18 @@
             #player-grid,
             #target-grid {
                 display: grid !important;
-                grid-template-columns: repeat(4, 1fr) !important;
-                grid-template-rows: repeat(4, 1fr) !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                grid-template-rows: repeat(3, 1fr) !important;
                 gap: 4px !important;
                 grid-gap: 4px !important;
-                width: 216px !important;
-                height: 216px !important;
+                width: 232px !important;
+                height: 232px !important;
             }
 
             .cell {
                 width: 100% !important;
                 height: 100% !important;
                 border-radius: 8px !important;
-                transform: none !important;
-            }
-
-            .cell.dark {
-                transform: none !important;
             }
 
             #actions {
@@ -1539,9 +1598,47 @@
             currentColor: 'blue',
             
             // Constants
-            GRID_SIZE: 4,
-            MIN_MOVES: 5,
+            GRID_SIZE: 3,
+            MIN_MOVES: 3,
             MAX_MOVES: 7,
+            
+            // BFS Solver to find minimum moves
+            findMinimumMoves(startState, targetState) {
+                // Convert states to strings for comparison
+                const targetStr = targetState.join('');
+                const startStr = startState.join('');
+                
+                if (startStr === targetStr) return 0;
+                
+                // BFS queue: [state, moves, path]
+                const queue = [[startState, 0, []]];
+                const visited = new Set([startStr]);
+                
+                while (queue.length > 0) {
+                    const [currentState, moves, path] = queue.shift();
+                    
+                    // Try clicking each position
+                    for (let i = 0; i < 9; i++) {
+                        // Create a copy and apply the move
+                        const newState = [...currentState];
+                        this.applyMove(newState, i);
+                        const newStateStr = newState.join('');
+                        
+                        // Check if we reached the target
+                        if (newStateStr === targetStr) {
+                            return moves + 1;
+                        }
+                        
+                        // Add to queue if not visited
+                        if (!visited.has(newStateStr) && moves + 1 < 15) { // Prevent infinite loops
+                            visited.add(newStateStr);
+                            queue.push([newState, moves + 1, [...path, i]]);
+                        }
+                    }
+                }
+                
+                return -1; // Should never happen
+            },
             
             // Color themes
             colorThemes: {
@@ -1797,32 +1894,96 @@
                     return rng / 0x7fffffff;
                 };
                 
-                // Determine optimal moves for today (5-7)
-                const optimalMoves = this.MIN_MOVES + Math.floor(random() * (this.MAX_MOVES - this.MIN_MOVES + 1));
-                
-                // Start with all light
-                const startGrid = Array(16).fill(true);
-                const targetGrid = Array(16).fill(true);
-                
-                // Generate unique random positions
-                const solutionMoves = [];
-                while (solutionMoves.length < optimalMoves) {
-                    const pos = Math.floor(random() * 16);
-                    if (!solutionMoves.includes(pos)) {
-                        solutionMoves.push(pos);
+                // Keep trying until we get a puzzle with desired difficulty
+                let attempts = 0;
+                while (attempts < 100) {
+                    attempts++;
+                    
+                    // Start with all light
+                    const startGrid = Array(9).fill(true);
+                    const targetGrid = Array(9).fill(true);
+                    
+                    // Apply random moves to create a target pattern
+                    const numMoves = 5 + Math.floor(random() * 10); // Try 5-14 moves
+                    const appliedMoves = [];
+                    
+                    for (let i = 0; i < numMoves; i++) {
+                        const pos = Math.floor(random() * 9);
+                        appliedMoves.push(pos);
+                        this.applyMove(targetGrid, pos);
+                    }
+                    
+                    // Verify the minimum moves required
+                    const minMoves = this.findMinimumMoves(startGrid, targetGrid);
+                    
+                    // Accept if it requires 3-7+ moves
+                    if (minMoves >= 3 && minMoves <= 12) {
+                        // Find the actual optimal solution
+                        const solution = this.findOptimalSolution(startGrid, targetGrid);
+                        
+                        return {
+                            start: startGrid,
+                            target: targetGrid,
+                            optimal: minMoves <= 7 ? minMoves : 7, // Cap display at 7
+                            solution: solution
+                        };
                     }
                 }
                 
-                // Apply moves to create target
-                solutionMoves.forEach(index => {
-                    this.applyMove(targetGrid, index);
-                });
+                // Fallback (shouldn't happen)
+                console.warn('Could not generate puzzle with desired difficulty');
+                return this.generateFallbackPuzzle(random);
+            },
+            
+            // Find the actual optimal solution path
+            findOptimalSolution(startState, targetState) {
+                const targetStr = targetState.join('');
+                const startStr = startState.join('');
+                
+                if (startStr === targetStr) return [];
+                
+                const queue = [[startState, []]];
+                const visited = new Set([startStr]);
+                
+                while (queue.length > 0) {
+                    const [currentState, path] = queue.shift();
+                    
+                    for (let i = 0; i < 9; i++) {
+                        const newState = [...currentState];
+                        this.applyMove(newState, i);
+                        const newStateStr = newState.join('');
+                        const newPath = [...path, i];
+                        
+                        if (newStateStr === targetStr) {
+                            return newPath;
+                        }
+                        
+                        if (!visited.has(newStateStr)) {
+                            visited.add(newStateStr);
+                            queue.push([newState, newPath]);
+                        }
+                    }
+                }
+                
+                return [];
+            },
+            
+            // Fallback puzzle generation
+            generateFallbackPuzzle(random) {
+                // Simple fallback that generates a known 3-move puzzle
+                const startGrid = Array(9).fill(true);
+                const targetGrid = Array(9).fill(true);
+                
+                // Apply 3 corner moves (guaranteed to need 3 moves to solve)
+                this.applyMove(targetGrid, 0);
+                this.applyMove(targetGrid, 2);
+                this.applyMove(targetGrid, 6);
                 
                 return {
                     start: startGrid,
                     target: targetGrid,
-                    optimal: optimalMoves,
-                    solution: solutionMoves
+                    optimal: 3,
+                    solution: [0, 2, 6]
                 };
             },
             
@@ -1836,13 +1997,13 @@
             
             getAffectedPositions(index) {
                 const positions = [index];
-                const row = Math.floor(index / 4);
-                const col = index % 4;
+                const row = Math.floor(index / 3);
+                const col = index % 3;
                 
-                if (row > 0) positions.push(index - 4);
-                if (row < 3) positions.push(index + 4);
+                if (row > 0) positions.push(index - 3);
+                if (row < 2) positions.push(index + 3);
                 if (col > 0) positions.push(index - 1);
-                if (col < 3) positions.push(index + 1);
+                if (col < 2) positions.push(index + 1);
                 
                 return positions;
             },
@@ -1916,7 +2077,7 @@
             render() {
                 // Update stats
                 this.elements.movesCount.textContent = this.moves;
-                this.elements.optimalMoves.textContent = this.optimalMoves;
+                this.elements.optimalMoves.textContent = this.optimalMoves >= 7 ? '7+' : this.optimalMoves;
                 
                 // Render player grid
                 this.elements.playerGrid.innerHTML = '';
@@ -2066,7 +2227,7 @@
             // Handle win
             handleWin() {
                 this.isComplete = true;
-                const isPerfect = this.moves === this.optimalMoves;
+                const isPerfect = this.moves === this.optimalMoves || (this.optimalMoves === 7 && this.moves === 7);
                 const stats = this.updateStats(isPerfect);
                 this.saveState();
                 this.showCompletionBadge();
@@ -2084,7 +2245,8 @@
                         subtitle.innerHTML = `You found the optimal solution in ${this.moves} moves!<br><br>`;
                     } else {
                         title.textContent = 'Solved!';
-                        subtitle.innerHTML = `You solved it in ${this.moves} moves (optimal: ${this.optimalMoves})<br><br>`;
+                        const optimalText = this.optimalMoves >= 7 ? '7+' : this.optimalMoves;
+                        subtitle.innerHTML = `You solved it in ${this.moves} moves (optimal: ${optimalText})<br><br>`;
                     }
                     
                     // Add stats in horizontal layout
@@ -2153,7 +2315,7 @@
             resetTiles() {
                 if (this.isAnimating || this.isComplete) return;
                 
-                this.grid = Array(16).fill(true);
+                this.grid = Array(9).fill(true);
                 this.moveHistory = []; // Clear move history on reset
                 this.previewIndex = -1; // Clear preview
                 this.render();
@@ -2233,7 +2395,7 @@
                 stepsContainer.innerHTML = '';
                 
                 // Start with fresh grid
-                let currentGrid = Array(16).fill(true);
+                let currentGrid = Array(9).fill(true);
                 
                 // Show starting grid
                 const startStep = document.createElement('div');
@@ -2297,8 +2459,8 @@
                 
                 // Generate grid visualization of target pattern
                 let gridVisual = '';
-                for (let i = 0; i < 16; i++) {
-                    if (i > 0 && i % 4 === 0) {
+                for (let i = 0; i < 9; i++) {
+                    if (i > 0 && i % 3 === 0) {
                         gridVisual += '\n';
                     }
                     gridVisual += this.targetGrid[i] ? '🟦' : '⬛';
@@ -2359,7 +2521,8 @@
                     subtitle.innerHTML = `You found the optimal solution in ${this.moves} moves!<br><br>`;
                 } else {
                     title.textContent = 'Solved!';
-                    subtitle.innerHTML = `You solved it in ${this.moves} moves (optimal: ${this.optimalMoves})<br><br>`;
+                    const optimalText = this.optimalMoves >= 7 ? '7+' : this.optimalMoves;
+                    subtitle.innerHTML = `You solved it in ${this.moves} moves (optimal: ${optimalText})<br><br>`;
                 }
                 
                 // Add stats in horizontal layout
