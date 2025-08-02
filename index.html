@@ -437,9 +437,8 @@
                 box-shadow: none;
             }
             
-            /* But allow hover effects during preview mode on mobile */
-            .cell.preview-selected,
-            .cell.preview-affected {
+            /* But allow hover effects during preview mode on mobile - only for selected tile */
+            .cell.preview-selected {
                 transform: scale(1.05);
                 box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
             }
