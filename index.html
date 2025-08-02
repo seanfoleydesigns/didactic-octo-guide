@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>Squip - Daily Grid Puzzle</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Turn all tiles to one color in as few moves as possible! A challenging daily grid puzzle game where clicking tiles flips adjacent neighbors. New puzzle every day!">
+    <meta name="description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few moves as possible with a new puzzle every day.">
     <meta name="keywords" content="puzzle game, daily puzzle, grid game, logic puzzle, brain teaser, squip, tile flipping game">
     <meta name="author" content="Squip">
     <meta name="robots" content="index, follow">
@@ -18,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://squip.io">
     <meta property="og:title" content="Squip - Daily Grid Puzzle">
-    <meta property="og:description" content="Turn all tiles to one color in as few moves as possible! A challenging daily grid puzzle game. New puzzle every day!">
+    <meta property="og:description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few moves as possible with a new puzzle every day.">
     <meta property="og:image" content="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
     <meta property="og:site_name" content="Squip">
     
@@ -26,7 +31,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="https://squip.io">
     <meta name="twitter:title" content="Squip - Daily Grid Puzzle">
-    <meta name="twitter:description" content="Turn all tiles to one color in as few moves as possible! A challenging daily grid puzzle game.">
+    <meta name="twitter:description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few moves as possible with a new puzzle every day.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
     
     <!-- Favicon -->
@@ -50,7 +55,7 @@
       "@context": "https://schema.org",
       "@type": "VideoGame",
       "name": "Squip",
-      "description": "A challenging daily grid puzzle game where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few moves as possible!",
+      "description": "Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few moves as possible with a new puzzle every day.",
       "url": "https://squip.io",
       "genre": "Puzzle",
       "gamePlatform": "Web Browser",
@@ -336,12 +341,12 @@
         }
 
         #player-grid {
-            grid-template-columns: repeat(3, 72px);
-            grid-template-rows: repeat(3, 72px);
-            min-width: 232px;
-            min-height: 232px;
-            max-width: 232px;
-            max-height: 232px;
+            grid-template-columns: repeat(4, 60px);
+            grid-template-rows: repeat(4, 60px);
+            min-width: 260px;
+            min-height: 260px;
+            max-width: 260px;
+            max-height: 260px;
         }
 
         .cell {
@@ -354,8 +359,8 @@
             overflow: hidden;
             display: block;
             box-sizing: border-box;
-            width: 72px;
-            height: 72px;
+            width: 60px;
+            height: 60px;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }
@@ -786,8 +791,8 @@
             border-radius: 12px;
             margin: 0 auto;
             width: fit-content;
-            grid-template-columns: repeat(3, 40px);
-            grid-template-rows: repeat(3, 40px);
+            grid-template-columns: repeat(4, 35px);
+            grid-template-rows: repeat(4, 35px);
         }
 
         .solution-cell {
@@ -1212,12 +1217,12 @@
 
         @media (min-width: 501px) {
             .cell {
-                width: 72px !important;
-                height: 72px !important;
-                min-width: 72px !important;
-                min-height: 72px !important;
-                max-width: 72px !important;
-                max-height: 72px !important;
+                width: 60px !important;
+                height: 60px !important;
+                min-width: 60px !important;
+                min-height: 60px !important;
+                max-width: 60px !important;
+                max-height: 60px !important;
             }
         }
 
@@ -1377,12 +1382,12 @@
 
             #player-grid {
                 display: grid !important;
-                grid-template-columns: repeat(3, 1fr) !important;
-                grid-template-rows: repeat(3, 1fr) !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                grid-template-rows: repeat(4, 1fr) !important;
                 gap: 4px !important;
                 grid-gap: 4px !important;
-                width: 232px !important;
-                height: 232px !important;
+                width: 260px !important;
+                height: 260px !important;
             }
 
             .cell {
@@ -1682,14 +1687,14 @@
             currentColor: 'blue',
             
             // Constants
-            GRID_SIZE: 3,
+            GRID_SIZE: 4,
             MIN_MOVES: 3,
             MAX_MOVES: 7,
             
             // BFS Solver to find minimum moves to all-light state
             findMinimumMoves(startState) {
                 // Target is all tiles light (true)
-                const targetStr = 'true'.repeat(9);
+                const targetStr = 'true'.repeat(16);
                 const startStr = startState.join('');
                 
                 if (startStr === targetStr) return 0;
@@ -1702,7 +1707,7 @@
                     const [currentState, moves, path] = queue.shift();
                     
                     // Try clicking each position
-                    for (let i = 0; i < 9; i++) {
+                    for (let i = 0; i < 16; i++) {
                         // Create a copy and apply the move
                         const newState = [...currentState];
                         this.applyMove(newState, i);
@@ -1726,7 +1731,7 @@
             
             // Find the actual optimal solution path to all-light state
             findOptimalSolution(startState) {
-                const targetStr = 'true'.repeat(9);
+                const targetStr = 'true'.repeat(16);
                 const startStr = startState.join('');
                 
                 if (startStr === targetStr) return [];
@@ -1737,7 +1742,7 @@
                 while (queue.length > 0) {
                     const [currentState, path] = queue.shift();
                     
-                    for (let i = 0; i < 9; i++) {
+                    for (let i = 0; i < 16; i++) {
                         const newState = [...currentState];
                         this.applyMove(newState, i);
                         const newStateStr = newState.join('');
@@ -2024,14 +2029,14 @@
                     attempts++;
                     
                     // Start with all light
-                    const targetGrid = Array(9).fill(true);
+                    const targetGrid = Array(16).fill(true);
                     
                     // Apply random moves to create a starting pattern
                     const numMoves = 5 + Math.floor(random() * 10); // Try 5-14 moves
                     const appliedMoves = [];
                     
                     for (let i = 0; i < numMoves; i++) {
-                        const pos = Math.floor(random() * 9);
+                        const pos = Math.floor(random() * 16);
                         appliedMoves.push(pos);
                         this.applyMove(targetGrid, pos);
                     }
@@ -2060,17 +2065,17 @@
             // Fallback puzzle generation
             generateFallbackPuzzle(random) {
                 // Simple fallback that generates a known 3-move puzzle
-                const startGrid = Array(9).fill(true);
+                const startGrid = Array(16).fill(true);
                 
                 // Apply 3 corner moves (guaranteed to need 3 moves to solve)
                 this.applyMove(startGrid, 0);
-                this.applyMove(startGrid, 2);
-                this.applyMove(startGrid, 6);
+                this.applyMove(startGrid, 3);
+                this.applyMove(startGrid, 12);
                 
                 return {
                     starting: startGrid,
                     optimal: 3,
-                    solution: [0, 2, 6]
+                    solution: [0, 3, 12]
                 };
             },
             
@@ -2084,13 +2089,13 @@
             
             getAffectedPositions(index) {
                 const positions = [index];
-                const row = Math.floor(index / 3);
-                const col = index % 3;
+                const row = Math.floor(index / 4);
+                const col = index % 4;
                 
-                if (row > 0) positions.push(index - 3);
-                if (row < 2) positions.push(index + 3);
+                if (row > 0) positions.push(index - 4);
+                if (row < 3) positions.push(index + 4);
                 if (col > 0) positions.push(index - 1);
-                if (col < 2) positions.push(index + 1);
+                if (col < 3) positions.push(index + 1);
                 
                 return positions;
             },
@@ -2102,7 +2107,7 @@
                 const saved = this.load(saveKey);
                 
                 // Validate saved data has correct grid size
-                if (saved && saved.grid && saved.grid.length === 9 && saved.starting && saved.starting.length === 9) {
+                if (saved && saved.grid && saved.grid.length === 16 && saved.starting && saved.starting.length === 16) {
                     // Load saved state
                     this.grid = saved.grid;
                     this.startingPattern = saved.starting;
@@ -2586,8 +2591,8 @@
                 
                 // Generate grid visualization of starting pattern
                 let gridVisual = '';
-                for (let i = 0; i < 9; i++) {
-                    if (i > 0 && i % 3 === 0) {
+                for (let i = 0; i < 16; i++) {
+                    if (i > 0 && i % 4 === 0) {
                         gridVisual += '\n';
                     }
                     gridVisual += this.startingPattern[i] ? '🟦' : '⬛';
