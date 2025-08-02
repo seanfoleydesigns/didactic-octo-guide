@@ -372,6 +372,32 @@
             vertical-align: middle;
         }
 
+        /* Remove focus styles on touch devices */
+        .cell:focus {
+            outline: none;
+        }
+
+        /* Remove focus visible on modern browsers */
+        .cell:focus-visible {
+            outline: none;
+        }
+
+        /* Remove active state persistence on mobile */
+        .cell:active {
+            transform: scale(0.95);
+        }
+
+        /* Specific mobile/tablet focus removal */
+        @media (hover: none) and (pointer: coarse) {
+            .cell:focus,
+            .cell:focus-visible,
+            .cell:active:not(:active) {
+                transform: none !important;
+                box-shadow: none !important;
+                outline: none !important;
+            }
+        }
+
         .cell::before {
             content: '';
             position: absolute;
@@ -2193,6 +2219,11 @@
                 
                 // Hide preview
                 this.hidePreview();
+                
+                // Blur the active element to remove focus state on mobile
+                if (document.activeElement && document.activeElement.blur) {
+                    document.activeElement.blur();
+                }
                 
                 // Create ripple effect
                 const cell = this.elements.playerGrid.children[index];
