@@ -442,6 +442,11 @@
                 transform: scale(1.05);
                 box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
             }
+            
+            /* Adjust selected tile border thickness on mobile */
+            .cell.preview-selected::after {
+                border-width: 3px;
+            }
         }
 
         .cell.preview-light {
@@ -464,7 +469,7 @@
             left: -1px;
             right: -1px;
             bottom: -1px;
-            border: 2px dashed currentColor;
+            border: 3.5px dashed currentColor;
             border-radius: 10px;
             pointer-events: none;
         }
