@@ -2014,7 +2014,8 @@
                 const saveKey = `squip-day-${dayNumber}`;
                 const saved = this.load(saveKey);
                 
-                if (saved) {
+                // Validate saved data has correct grid size
+                if (saved && saved.grid && saved.grid.length === 9 && saved.target && saved.target.length === 9) {
                     // Load saved state
                     this.grid = saved.grid;
                     this.targetGrid = saved.target;
@@ -2037,7 +2038,7 @@
                         }
                     }
                 } else {
-                    // Generate new puzzle
+                    // Generate new puzzle if no valid save exists
                     const puzzle = this.generatePuzzle();
                     this.grid = [...puzzle.start];
                     this.targetGrid = puzzle.target;
@@ -2227,7 +2228,7 @@
             // Handle win
             handleWin() {
                 this.isComplete = true;
-                const isPerfect = this.moves === this.optimalMoves || (this.optimalMoves === 7 && this.moves === 7);
+                const isPerfect = this.moves === this.optimalMoves;
                 const stats = this.updateStats(isPerfect);
                 this.saveState();
                 this.showCompletionBadge();
