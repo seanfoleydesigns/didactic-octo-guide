@@ -13,7 +13,7 @@
     <title>Squip - Daily Grid Puzzle</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 5 moves with a new puzzle every day.">
+    <meta name="description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 6 moves with a new puzzle every day.">
     <meta name="keywords" content="puzzle game, daily puzzle, grid game, logic puzzle, brain teaser, squip, tile flipping game">
     <meta name="author" content="Squip">
     <meta name="robots" content="index, follow">
@@ -23,20 +23,20 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://squip.io">
     <meta property="og:title" content="Squip - Daily Grid Puzzle">
-    <meta property="og:description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 5 moves with a new puzzle every day.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    <meta property="og:description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 6 moves with a new puzzle every day.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/seanfoleydesigns/bug-free-guide/main/squip-logo.svg">
     <meta property="og:site_name" content="Squip">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="https://squip.io">
     <meta name="twitter:title" content="Squip - Daily Grid Puzzle">
-    <meta name="twitter:description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 5 moves with a new puzzle every day.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    <meta name="twitter:description" content="Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 6 moves with a new puzzle every day.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/seanfoleydesigns/bug-free-guide/main/squip-logo.svg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/seanfoleydesigns/bug-free-guide/main/squip-logo.svg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/seanfoleydesigns/bug-free-guide/main/squip-logo.svg">
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#fefefe">
@@ -55,12 +55,12 @@
       "@context": "https://schema.org",
       "@type": "VideoGame",
       "name": "Squip",
-      "description": "Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 5 moves with a new puzzle every day.",
+      "description": "Squip is a challenging daily grid puzzle where clicking tiles flips adjacent neighbors. Turn all tiles to one color in as few as 6 moves with a new puzzle every day.",
       "url": "https://squip.io",
       "genre": "Puzzle",
       "gamePlatform": "Web Browser",
       "operatingSystem": "Any",
-      "image": "https://raw.githubusercontent.com/[username]/[repo]/main/squip-logo.svg",
+      "image": "https://raw.githubusercontent.com/seanfoleydesigns/bug-free-guide/main/squip-logo.svg",
       "publisher": {
         "@type": "Organization",
         "@id": "Squip",
@@ -78,16 +78,15 @@
     <!-- Analytics -->
     <script src="https://cdn.counter.dev/script.js" data-id="edb14b17-4009-4579-b33d-6fd7ec0a330e" data-utcoffset="-4"></script>
     
-    <!-- Analytics -->
-    <script src="https://cdn.counter.dev/script.js" data-id="edb14b17-4009-4579-b33d-6fd7ec0a330e" data-utcoffset="-4"></script>
-    
     <style>
+        /* ===== CSS RESET & BASE STYLES ===== */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        /* ===== CSS VARIABLES ===== */
         :root {
             --primary-color: #0ea5e9;
             --primary-hover: #0284c7;
@@ -97,6 +96,7 @@
             --primary-rgb: 14, 165, 233;
         }
 
+        /* ===== BODY & MAIN CONTAINER ===== */
         body {
             display: flex;
             justify-content: center;
@@ -125,6 +125,7 @@
             backdrop-filter: blur(10px);
         }
 
+        /* ===== HEADER SECTION ===== */
         header {
             margin-bottom: 0;
             position: relative;
@@ -141,96 +142,20 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .settings-btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid #e0e0e0;
-            background: white;
+        #subtitle {
             color: #666;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
+            font-size: 12px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .settings-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .settings-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .help-btn {
-            position: absolute;
-            top: 45px;
-            right: 0;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid #e0e0e0;
-            background: white;
-            color: #666;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-        }
-
-        .help-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .help-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .stats-btn {
-            position: absolute;
-            top: 90px;
-            right: 0;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid #e0e0e0;
-            background: white;
-            color: #666;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-        }
-
-        .stats-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .stats-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
+        /* ===== HEADER BUTTONS ===== */
+        .settings-btn,
+        .help-btn,
+        .stats-btn,
         .share-icon-btn {
             position: absolute;
-            top: 135px;
             right: 0;
             width: 36px;
             height: 36px;
@@ -246,10 +171,26 @@
             padding: 0;
         }
 
+        .settings-btn { top: 0; }
+        .help-btn { top: 45px; }
+        .stats-btn { top: 90px; }
+        .share-icon-btn { top: 135px; }
+
+        .settings-btn:hover,
+        .help-btn:hover,
+        .stats-btn:hover,
         .share-icon-btn:hover:not(.disabled) {
             border-color: var(--primary-color);
             color: var(--primary-color);
             transform: scale(1.1);
+        }
+
+        .settings-btn svg,
+        .help-btn svg,
+        .stats-btn svg,
+        .share-icon-btn svg {
+            width: 20px;
+            height: 20px;
         }
 
         .share-icon-btn.disabled {
@@ -263,19 +204,7 @@
             color: #666;
         }
 
-        .share-icon-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        #subtitle {
-            color: #666;
-            font-size: 12px;
-            margin-bottom: 35px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
+        /* ===== STATS DISPLAY ===== */
         #stats {
             display: flex;
             justify-content: center;
@@ -303,6 +232,7 @@
             font-size: 18px;
         }
 
+        /* ===== GAME AREA ===== */
         #game-area {
             position: relative;
             margin-bottom: 20px;
@@ -321,6 +251,7 @@
             font-weight: 700;
         }
 
+        /* ===== GRID STYLES ===== */
         .grid {
             display: grid;
             gap: 4px !important;
@@ -347,6 +278,7 @@
             max-height: 260px;
         }
 
+        /* ===== CELL STYLES ===== */
         .cell {
             background: var(--primary-color);
             border: none;
@@ -376,24 +308,18 @@
             vertical-align: middle;
         }
 
-        /* Remove focus styles on touch devices */
-        .cell:focus {
-            outline: none;
-        }
-
-        /* Remove focus visible on modern browsers */
+        /* Remove focus styles */
+        .cell:focus,
         .cell:focus-visible {
             outline: none;
         }
 
-        /* Remove active state persistence on mobile */
         .cell:active {
             transform: scale(0.95);
         }
 
-        /* Specific mobile/tablet focus removal */
+        /* Mobile-specific styles */
         @media (hover: none) and (pointer: coarse) {
-            /* Only disable effects when NOT in preview mode */
             .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):focus,
             .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):focus-visible,
             .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):active {
@@ -402,7 +328,6 @@
                 outline: none !important;
             }
             
-            /* Disable hover effects on touch devices when not in preview */
             .cell:not(.preview-light):not(.preview-dark):not(.preview-selected):not(.preview-affected):hover {
                 transform: none !important;
                 box-shadow: none !important;
@@ -440,18 +365,17 @@
                 box-shadow: none;
             }
             
-            /* But allow hover effects during preview mode on mobile - only for selected tile */
             .cell.preview-selected {
                 transform: scale(1.05);
                 box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
             }
             
-            /* Adjust selected tile border thickness on mobile */
             .cell.preview-selected::after {
                 border-width: 3px;
             }
         }
 
+        /* Preview states */
         .cell.preview-light {
             background: var(--primary-light) !important;
         }
@@ -515,6 +439,7 @@
             color: #ffffff;
         }
 
+        /* Cell animation */
         .cell.animating {
             animation: flip 0.4s ease-in-out;
         }
@@ -525,6 +450,7 @@
             100% { transform: scale(1) rotateY(180deg); }
         }
 
+        /* ===== EFFECTS ===== */
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -541,7 +467,29 @@
             }
         }
 
-        /* Overlay Styles */
+        .particles {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: particle-float 1s ease-out forwards;
+        }
+
+        @keyframes particle-float {
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* ===== OVERLAYS & MODALS ===== */
         .overlay {
             position: fixed;
             top: 0;
@@ -623,6 +571,7 @@
             text-align: center;
         }
 
+        /* ===== TUTORIAL MODAL ===== */
         .tutorial-section {
             margin: 20px 0;
             text-align: left;
@@ -759,14 +708,51 @@
             background: var(--primary-hover);
         }
 
-        /* Result Modal */
+        /* ===== RESULT MODAL ===== */
         .result-modal {
             text-align: center;
             padding: 36px;
             max-width: 420px;
         }
 
-        /* Solution Modal */
+        .result-header {
+            margin-bottom: 28px;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 24px;
+        }
+
+        .result-btn {
+            padding: 11px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .share-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ===== SOLUTION MODAL ===== */
         .solution-modal {
             text-align: center;
             padding: 36px;
@@ -820,54 +806,7 @@
             margin: 16px 0;
         }
 
-        .result-header {
-            margin-bottom: 28px;
-        }
-
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-            margin-top: 24px;
-        }
-
-        .result-btn {
-            padding: 11px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            width: 110px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .share-btn {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .share-btn:hover {
-            background: var(--primary-hover);
-        }
-
-        .solution-btn {
-            background: var(--primary-color);
-            color: white;
-            padding: 11px 28px;
-            border: none;
-        }
-
-        .solution-btn:hover {
-            background: var(--primary-hover);
-        }
-
+        /* ===== ACTION BUTTONS ===== */
         #actions {
             display: flex;
             gap: 8px;
@@ -887,78 +826,39 @@
             letter-spacing: 0.05em;
         }
 
-        #reset-btn {
-            background: var(--primary-color);
-            color: white;
-            width: 110px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        #reset-btn:hover:not(.disabled) {
-            background: var(--primary-hover);
-        }
-
-        #reset-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        #undo-btn {
-            background: var(--primary-color);
-            color: white;
-            width: 110px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        #undo-btn:hover:not(.disabled) {
-            background: var(--primary-hover);
-        }
-
-        #undo-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
+        #reset-btn,
+        #undo-btn,
         #solution-btn {
             background: var(--primary-color);
             color: white;
             width: 110px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
+        #reset-btn:hover:not(.disabled),
+        #undo-btn:hover:not(.disabled),
         #solution-btn:hover:not(.disabled) {
             background: var(--primary-hover);
         }
 
+        #reset-btn.disabled,
+        #undo-btn.disabled,
         #solution-btn.disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
 
+        .solution-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 11px 28px;
+            border: none;
+        }
+
+        .solution-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ===== MESSAGE TOAST ===== */
         #message {
             position: fixed;
             top: 20px;
@@ -981,28 +881,7 @@
             opacity: 1;
         }
 
-        .particles {
-            position: fixed;
-            pointer-events: none;
-            z-index: 100;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            animation: particle-float 1s ease-out forwards;
-        }
-
-        @keyframes particle-float {
-            to {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-        }
-
+        /* ===== COMPLETION INDICATOR ===== */
         .completed-indicator {
             display: inline-block;
             margin-left: 8px;
@@ -1031,6 +910,7 @@
             color: #000;
         }
 
+        /* ===== FOOTER ===== */
         .contact-footer {
             margin-top: 20px;
             font-size: 11px;
@@ -1038,7 +918,7 @@
             text-align: center;
         }
 
-        /* Confirmation Modal */
+        /* ===== CONFIRMATION DIALOG ===== */
         .confirmation-dialog {
             text-align: center;
         }
@@ -1086,7 +966,7 @@
             color: var(--primary-color);
         }
 
-        /* Settings Modal Styles */
+        /* ===== SETTINGS MODAL ===== */
         .setting-item {
             display: flex;
             justify-content: space-between;
@@ -1118,7 +998,7 @@
             line-height: 1.5;
         }
 
-        /* Toggle Switch */
+        /* ===== TOGGLE SWITCH ===== */
         .toggle-switch {
             position: relative;
             display: inline-block;
@@ -1174,7 +1054,7 @@
             cursor: not-allowed;
         }
 
-        /* Color Picker Styles */
+        /* ===== COLOR PICKER ===== */
         .color-picker {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1213,6 +1093,63 @@
             text-shadow: 0 0 3px rgba(0,0,0,0.5);
         }
 
+        /* ===== ANNOUNCEMENT BANNER ===== */
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-out;
+        }
+
+        .announcement-banner.show {
+            transform: translateY(0);
+        }
+
+        .announcement-banner .banner-text {
+            flex: 1;
+        }
+
+        .announcement-banner .close-banner {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 16px;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .announcement-banner .close-banner:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Adjust body padding when banner is shown */
+        body.banner-shown {
+            padding-top: 60px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (min-width: 501px) {
             .cell {
                 width: 60px !important;
@@ -1228,6 +1165,25 @@
             body {
                 padding: 5px 10px 10px 10px;
                 padding-bottom: env(safe-area-inset-bottom, 10px);
+            }
+
+            body.banner-shown {
+                padding-top: 60px;
+            }
+
+            .announcement-banner {
+                font-size: 13px;
+                padding: 10px 15px;
+                gap: 10px;
+            }
+
+            .announcement-banner .banner-text {
+                flex: 1;
+                text-align: left;
+            }
+
+            .announcement-banner .close-banner {
+                flex-shrink: 0;
             }
 
             #game-container {
@@ -1246,45 +1202,22 @@
                 max-height: 85vh;
             }
 
-            .settings-btn {
-                width: 32px;
-                height: 32px;
-                top: 0;
-            }
-
-            .settings-btn svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            .help-btn {
-                width: 32px;
-                height: 32px;
-                top: 40px;
-            }
-
-            .help-btn svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            .stats-btn {
-                width: 32px;
-                height: 32px;
-                top: 80px;
-            }
-
-            .stats-btn svg {
-                width: 18px;
-                height: 18px;
-            }
-
+            .settings-btn,
+            .help-btn,
+            .stats-btn,
             .share-icon-btn {
                 width: 32px;
                 height: 32px;
-                top: 120px;
             }
 
+            .settings-btn { top: 0; }
+            .help-btn { top: 40px; }
+            .stats-btn { top: 80px; }
+            .share-icon-btn { top: 120px; }
+
+            .settings-btn svg,
+            .help-btn svg,
+            .stats-btn svg,
             .share-icon-btn svg {
                 width: 18px;
                 height: 18px;
@@ -1427,12 +1360,18 @@
     </style>
 </head>
 <body>
+    <!-- Announcement Banner -->
+    <div id="announcement-banner" class="announcement-banner">
+        <div class="banner-text">New Challenge! Today's puzzle requires 6 moves instead of 5 for the perfect solution!</div>
+        <button class="close-banner" onclick="Game.closeBanner()" aria-label="Close banner">×</button>
+    </div>
+
     <div id="game-container">
         <header>
             <h1>SQUIP</h1>
             <div id="subtitle">Daily Puzzle #<span id="puzzle-number"></span></div>
             
-            <!-- Settings button -->
+            <!-- Header Buttons -->
             <button class="settings-btn" onclick="Game.showSettings()" title="Settings">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
@@ -1457,6 +1396,7 @@
                     <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
                 </svg>
             </button>
+            
             <button class="share-icon-btn disabled" onclick="Game.shareResults()" title="Share results" id="share-icon-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="18" cy="5" r="3"></circle>
@@ -1499,12 +1439,12 @@
         <div class="modal">
             <button class="close-btn" onclick="Game.closeTutorial()">&times;</button>
             <h2>How To Play</h2>
-            <p class="subtitle">Turn all tiles to one color in as few as 5 moves!</p>
+            <p class="subtitle">Turn all tiles to one color in as few as 6 moves!</p>
             
             <div class="tutorial-section">
                 <h3>The Rules</h3>
                 
-                <p class="example-text" style="text-align: left; margin: 0 0 20px 0;">Click any tile to flip it and its adjacent neighbors. Each position has a different pattern - tiles in the center flip in a plus (+) shape, edge tiles flip in a T shape, and corner tiles flip in an L shape. Your goal is to make all tiles the same color - <strong>can you find the 5-move solution?</strong></p>
+                <p class="example-text" style="text-align: left; margin: 0 0 20px 0;">Click any tile to flip it and its adjacent neighbors. Each position has a different pattern - tiles in the center flip in a plus (+) shape, edge tiles flip in a T shape, and corner tiles flip in an L shape. Your goal is to make all tiles the same color - <strong>can you find the 6-move solution?</strong></p>
                 
                 <div class="example-row">
                     <div class="example-item">
@@ -1557,13 +1497,13 @@
                 </div>
                 
                 <p class="example-text" style="text-align: left; margin: 20px 0; background: rgba(var(--primary-rgb), 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(var(--primary-rgb), 0.3);">
-                    <strong>Tips:</strong> Each tile toggles between the current color and black when flipped. Remember that clicking a tile affects multiple tiles at once! Every daily puzzle can be solved in exactly 5 moves - finding that perfect solution is the ultimate challenge!
+                    <strong>Tips:</strong> Each tile toggles between the current color and black when flipped. Remember that clicking a tile affects multiple tiles at once! Every daily puzzle can be solved in exactly 6 moves - finding that perfect solution is the ultimate challenge!
                 </p>
                 
                 <div style="margin-top: 20px;">
                     <div class="rule-item">
                         <div class="rule-icon">•</div>
-                        <div class="rule-text">Every puzzle can be solved in exactly <strong>5 moves</strong> - that's the goal!</div>
+                        <div class="rule-text">Every puzzle can be solved in exactly <strong>6 moves</strong> - that's the goal!</div>
                     </div>
                     <div class="rule-item">
                         <div class="rule-icon">•</div>
@@ -1615,7 +1555,7 @@
         <div class="modal solution-modal">
             <button class="close-btn" onclick="Game.closeSolution()">&times;</button>
             <h2>Solution</h2>
-            <p class="subtitle">Here's the 5-move solution:</p>
+            <p class="subtitle">Here's the 6-move solution:</p>
             <div id="solution-steps"></div>
         </div>
     </div>
@@ -1680,8 +1620,9 @@
     <div class="particles" id="particles"></div>
 
     <script>
+        // ===== GAME OBJECT =====
         const Game = {
-            // State
+            // ===== STATE VARIABLES =====
             grid: [],
             startingPattern: [],
             moves: 0,
@@ -1696,82 +1637,11 @@
             isTouchDevice: false,
             currentColor: 'blue',
             
-            // Constants
+            // ===== CONSTANTS =====
             GRID_SIZE: 4,
-            OPTIMAL_MOVES: 5,
+            OPTIMAL_MOVES: 6,
             
-            // BFS Solver to find minimum moves to all-light state
-            findMinimumMoves(startState) {
-                // Target is all tiles light (true)
-                const targetStr = 'true'.repeat(16);
-                const startStr = startState.join('');
-                
-                if (startStr === targetStr) return 0;
-                
-                // BFS queue: [state, moves, path]
-                const queue = [[startState, 0, []]];
-                const visited = new Set([startStr]);
-                
-                while (queue.length > 0) {
-                    const [currentState, moves, path] = queue.shift();
-                    
-                    // Try clicking each position
-                    for (let i = 0; i < 16; i++) {
-                        // Create a copy and apply the move
-                        const newState = [...currentState];
-                        this.applyMove(newState, i);
-                        const newStateStr = newState.join('');
-                        
-                        // Check if we reached the target (all true)
-                        if (newStateStr === targetStr) {
-                            return moves + 1;
-                        }
-                        
-                        // Add to queue if not visited
-                        if (!visited.has(newStateStr) && moves + 1 < 15) { // Prevent infinite loops
-                            visited.add(newStateStr);
-                            queue.push([newState, moves + 1, [...path, i]]);
-                        }
-                    }
-                }
-                
-                return -1; // Should never happen
-            },
-            
-            // Find the actual optimal solution path to all-light state
-            findOptimalSolution(startState) {
-                const targetStr = 'true'.repeat(16);
-                const startStr = startState.join('');
-                
-                if (startStr === targetStr) return [];
-                
-                const queue = [[startState, []]];
-                const visited = new Set([startStr]);
-                
-                while (queue.length > 0) {
-                    const [currentState, path] = queue.shift();
-                    
-                    for (let i = 0; i < 16; i++) {
-                        const newState = [...currentState];
-                        this.applyMove(newState, i);
-                        const newStateStr = newState.join('');
-                        const newPath = [...path, i];
-                        
-                        if (newStateStr === targetStr) {
-                            return newPath;
-                        }
-                        
-                        if (!visited.has(newStateStr)) {
-                            visited.add(newStateStr);
-                            queue.push([newState, newPath]);
-                        }
-                    }
-                }
-                
-                return [];
-            },
-            
-            // Color themes
+            // ===== COLOR THEMES =====
             colorThemes: {
                 blue: {
                     primary: '#0ea5e9',
@@ -1829,10 +1699,10 @@
                 }
             },
             
-            // Storage
+            // ===== FALLBACK STORAGE =====
             memoryStorage: {},
             
-            // Elements
+            // ===== DOM ELEMENTS CACHE =====
             elements: {
                 playerGrid: document.getElementById('player-grid'),
                 currentMovesCount: document.getElementById('current-moves-count'),
@@ -1850,10 +1720,11 @@
                 settingsOverlay: document.getElementById('settings-overlay'),
                 puzzleNumber: document.getElementById('puzzle-number'),
                 subtitle: document.getElementById('subtitle'),
-                colorName: document.getElementById('color-name')
+                colorName: document.getElementById('color-name'),
+                announcementBanner: document.getElementById('announcement-banner')
             },
             
-            // Initialize
+            // ===== INITIALIZATION =====
             init() {
                 // Detect touch device
                 this.isTouchDevice = ('ontouchstart' in window) || 
@@ -1888,9 +1759,60 @@
                 this.updateUndoButton();
                 this.updateResetButton();
                 this.initializeStats();
+                this.checkAnnouncementBanner();
             },
             
-            // Initialize stats
+            // ===== DATE & PUZZLE NUMBER =====
+            getDateInfo() {
+                const today = new Date();
+                const startDate = new Date('2025-07-29');
+                const todayLocal = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+                const startLocal = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+                const dayNumber = Math.floor((todayLocal - startLocal) / (1000 * 60 * 60 * 24)) + 1;
+                return { today: todayLocal, dayNumber };
+            },
+            
+            updatePuzzleNumber() {
+                const { dayNumber } = this.getDateInfo();
+                this.elements.puzzleNumber.textContent = dayNumber.toString().padStart(3, '0');
+            },
+            
+            // ===== STORAGE HELPERS =====
+            isLocalStorageAvailable() {
+                try {
+                    const test = '__test__';
+                    localStorage.setItem(test, test);
+                    localStorage.removeItem(test);
+                    return true;
+                } catch {
+                    return false;
+                }
+            },
+            
+            save(key, value) {
+                const data = typeof value === 'string' ? value : JSON.stringify(value);
+                if (this.isLocalStorageAvailable()) {
+                    localStorage.setItem(key, data);
+                } else {
+                    this.memoryStorage[key] = data;
+                }
+            },
+            
+            load(key) {
+                const data = this.isLocalStorageAvailable() 
+                    ? localStorage.getItem(key) 
+                    : this.memoryStorage[key];
+                    
+                if (!data) return null;
+                
+                try {
+                    return JSON.parse(data);
+                } catch {
+                    return data;
+                }
+            },
+            
+            // ===== STATS SYSTEM =====
             initializeStats() {
                 const stats = this.load('squip-stats');
                 if (!stats) {
@@ -1903,7 +1825,6 @@
                 }
             },
             
-            // Update stats when puzzle completed
             updateStats(isPerfect) {
                 const stats = this.load('squip-stats') || {
                     currentStreak: 0,
@@ -1963,7 +1884,6 @@
                 return stats;
             },
             
-            // Reset streak when failing
             resetStreak() {
                 const stats = this.load('squip-stats');
                 if (stats) {
@@ -1972,61 +1892,12 @@
                 }
             },
             
-            getDateInfo() {
-                const today = new Date();
-                const startDate = new Date('2025-07-29');
-                const todayLocal = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-                const startLocal = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
-                const dayNumber = Math.floor((todayLocal - startLocal) / (1000 * 60 * 60 * 24)) + 1;
-                return { today: todayLocal, dayNumber };
-            },
-            
-            updatePuzzleNumber() {
-                const { dayNumber } = this.getDateInfo();
-                this.elements.puzzleNumber.textContent = dayNumber.toString().padStart(3, '0');
-            },
-            
-            // Storage helpers
-            isLocalStorageAvailable() {
-                try {
-                    const test = '__test__';
-                    localStorage.setItem(test, test);
-                    localStorage.removeItem(test);
-                    return true;
-                } catch {
-                    return false;
-                }
-            },
-            
-            save(key, value) {
-                const data = typeof value === 'string' ? value : JSON.stringify(value);
-                if (this.isLocalStorageAvailable()) {
-                    localStorage.setItem(key, data);
-                } else {
-                    this.memoryStorage[key] = data;
-                }
-            },
-            
-            load(key) {
-                const data = this.isLocalStorageAvailable() 
-                    ? localStorage.getItem(key) 
-                    : this.memoryStorage[key];
-                    
-                if (!data) return null;
-                
-                try {
-                    return JSON.parse(data);
-                } catch {
-                    return data;
-                }
-            },
-            
-            // Puzzle generation
+            // ===== PUZZLE GENERATION =====
             generatePuzzle() {
                 const { dayNumber } = this.getDateInfo();
                 let rng = dayNumber * 1337;
                 
-                // Random function
+                // Random function using linear congruential generator
                 const random = () => {
                     rng = (rng * 1103515245 + 12345) & 0x7fffffff;
                     return rng / 0x7fffffff;
@@ -2037,11 +1908,11 @@
                 while (attempts < 500) {
                     attempts++;
                     
-                    // Start with all light
+                    // Start with all light (true)
                     const targetGrid = Array(16).fill(true);
                     
                     // Apply random moves to create a starting pattern
-                    const numMoves = 4 + Math.floor(random() * 8); // Try 4-11 moves
+                    const numMoves = 5 + Math.floor(random() * 8); // Try 5-12 moves for 6-move puzzles
                     const appliedMoves = [];
                     
                     for (let i = 0; i < numMoves; i++) {
@@ -2053,44 +1924,115 @@
                     // Verify the minimum moves required to get back to all-light
                     const minMoves = this.findMinimumMoves(targetGrid);
                     
-                    // Accept only if it requires exactly 5 moves
-                    if (minMoves === 5) {
+                    // Accept only if it requires exactly 6 moves
+                    if (minMoves === 6) {
                         // Find the actual optimal solution
                         const solution = this.findOptimalSolution(targetGrid);
                         
                         return {
-                            starting: targetGrid, // This becomes our starting pattern
-                            optimal: 5,
+                            starting: targetGrid,
+                            optimal: 6,
                             solution: solution
                         };
                     }
                 }
                 
                 // Fallback (shouldn't happen)
-                console.warn('Could not generate 5-move puzzle, using fallback');
+                console.warn('Could not generate 6-move puzzle, using fallback');
                 return this.generateFallbackPuzzle(random);
             },
             
-            // Fallback puzzle generation
             generateFallbackPuzzle(random) {
-                // Fallback that generates a known 5-move puzzle
+                // Fallback that generates a known 6-move puzzle
                 const startGrid = Array(16).fill(true);
                 
-                // Apply 5 specific moves that we know will require 5 moves to solve
+                // Apply 6 specific moves that we know will require 6 moves to solve
+                // This pattern creates a more complex configuration
                 this.applyMove(startGrid, 0);
                 this.applyMove(startGrid, 3);
-                this.applyMove(startGrid, 6);
-                this.applyMove(startGrid, 9);
+                this.applyMove(startGrid, 5);
+                this.applyMove(startGrid, 10);
+                this.applyMove(startGrid, 12);
                 this.applyMove(startGrid, 15);
                 
                 return {
                     starting: startGrid,
-                    optimal: 5,
-                    solution: [0, 3, 6, 9, 15]
+                    optimal: 6,
+                    solution: [0, 3, 5, 10, 12, 15]
                 };
             },
             
-            // Game logic
+            // ===== PUZZLE SOLVING (BFS) =====
+            findMinimumMoves(startState) {
+                // Target is all tiles light (true)
+                const targetStr = 'true'.repeat(16);
+                const startStr = startState.join('');
+                
+                if (startStr === targetStr) return 0;
+                
+                // BFS queue: [state, moves, path]
+                const queue = [[startState, 0, []]];
+                const visited = new Set([startStr]);
+                
+                while (queue.length > 0) {
+                    const [currentState, moves, path] = queue.shift();
+                    
+                    // Try clicking each position
+                    for (let i = 0; i < 16; i++) {
+                        // Create a copy and apply the move
+                        const newState = [...currentState];
+                        this.applyMove(newState, i);
+                        const newStateStr = newState.join('');
+                        
+                        // Check if we reached the target (all true)
+                        if (newStateStr === targetStr) {
+                            return moves + 1;
+                        }
+                        
+                        // Add to queue if not visited
+                        if (!visited.has(newStateStr) && moves + 1 < 15) { // Prevent infinite loops
+                            visited.add(newStateStr);
+                            queue.push([newState, moves + 1, [...path, i]]);
+                        }
+                    }
+                }
+                
+                return -1; // Should never happen
+            },
+            
+            findOptimalSolution(startState) {
+                const targetStr = 'true'.repeat(16);
+                const startStr = startState.join('');
+                
+                if (startStr === targetStr) return [];
+                
+                const queue = [[startState, []]];
+                const visited = new Set([startStr]);
+                
+                while (queue.length > 0) {
+                    const [currentState, path] = queue.shift();
+                    
+                    for (let i = 0; i < 16; i++) {
+                        const newState = [...currentState];
+                        this.applyMove(newState, i);
+                        const newStateStr = newState.join('');
+                        const newPath = [...path, i];
+                        
+                        if (newStateStr === targetStr) {
+                            return newPath;
+                        }
+                        
+                        if (!visited.has(newStateStr)) {
+                            visited.add(newStateStr);
+                            queue.push([newState, newPath]);
+                        }
+                    }
+                }
+                
+                return [];
+            },
+            
+            // ===== GAME LOGIC =====
             applyMove(grid, index) {
                 const positions = this.getAffectedPositions(index);
                 positions.forEach(pos => {
@@ -2103,15 +2045,16 @@
                 const row = Math.floor(index / 4);
                 const col = index % 4;
                 
-                if (row > 0) positions.push(index - 4);
-                if (row < 3) positions.push(index + 4);
-                if (col > 0) positions.push(index - 1);
-                if (col < 3) positions.push(index + 1);
+                // Add adjacent positions (orthogonal only)
+                if (row > 0) positions.push(index - 4); // Up
+                if (row < 3) positions.push(index + 4); // Down
+                if (col > 0) positions.push(index - 1); // Left
+                if (col < 3) positions.push(index + 1); // Right
                 
                 return positions;
             },
             
-            // Load or create puzzle
+            // ===== LOAD/CREATE PUZZLE =====
             loadOrCreatePuzzle() {
                 const { dayNumber } = this.getDateInfo();
                 const saveKey = `squip-day-${dayNumber}`;
@@ -2138,7 +2081,7 @@
                         // If already completed and won, ensure stats are loaded
                         if (this.checkWin() && !saved.statsUpdated) {
                             // This handles edge case where someone completed before stats feature
-                            this.updateStats(this.currentMoves === 5);
+                            this.updateStats(this.currentMoves === 6);
                         }
                     } else {
                         // Make sure share button is disabled initially
@@ -2161,8 +2104,10 @@
                     this.saveState();
                 }
                 
-                // Make sure share button starts disabled
-                this.elements.shareBtn.classList.add('disabled');
+                // Only disable share button if puzzle is not complete
+                if (!this.isComplete) {
+                    this.elements.shareBtn.classList.add('disabled');
+                }
                 
                 // Update button states
                 this.updateResetButton();
@@ -2170,7 +2115,7 @@
                 this.render();
             },
             
-            // Save current state
+            // ===== SAVE STATE =====
             saveState() {
                 const { dayNumber } = this.getDateInfo();
                 const saveKey = `squip-day-${dayNumber}`;
@@ -2191,7 +2136,7 @@
                 });
             },
             
-            // Render game
+            // ===== RENDERING =====
             render() {
                 // Update stats
                 this.elements.currentMovesCount.textContent = this.currentMoves;
@@ -2206,6 +2151,7 @@
                     cell.setAttribute('type', 'button');
                     cell.onclick = () => this.handleCellClick(index);
                     
+                    // Add hover preview for desktop
                     if (window.matchMedia('(hover: hover)').matches && !this.isComplete) {
                         cell.onmouseenter = () => this.showPreview(index);
                         cell.onmouseleave = () => this.hidePreview();
@@ -2218,7 +2164,7 @@
                 this.updateResetButton();
             },
             
-            // Handle cell click
+            // ===== INTERACTION HANDLERS =====
             handleCellClick(index) {
                 if (this.isAnimating || this.isComplete) return;
                 
@@ -2241,7 +2187,6 @@
                 }
             },
             
-            // Execute the actual move
             executeMove(index) {
                 this.isAnimating = true;
                 this.moves++;
@@ -2299,7 +2244,39 @@
                 });
             },
             
-            // Update undo button state
+            // ===== PREVIEW SYSTEM =====
+            showPreview(index) {
+                if (this.isAnimating || this.isComplete) return;
+                
+                const positions = this.getAffectedPositions(index);
+                positions.forEach(pos => {
+                    const cell = this.elements.playerGrid.children[pos];
+                    if (this.grid[pos]) {
+                        cell.classList.add('preview-dark');
+                    } else {
+                        cell.classList.add('preview-light');
+                    }
+                    
+                    // Add preview-affected to adjacent tiles (not the clicked one)
+                    if (pos !== index) {
+                        cell.classList.add('preview-affected');
+                    }
+                });
+                
+                // Add selected indicator to the clicked tile
+                const clickedCell = this.elements.playerGrid.children[index];
+                clickedCell.classList.add('preview-selected');
+            },
+            
+            hidePreview() {
+                const cells = document.querySelectorAll('.cell');
+                cells.forEach(cell => {
+                    cell.classList.remove('preview-dark', 'preview-light', 'preview-selected', 'preview-affected');
+                });
+                this.previewIndex = -1;
+            },
+            
+            // ===== BUTTON STATES =====
             updateUndoButton() {
                 if (this.moveHistory.length > 0 && !this.isComplete) {
                     this.elements.undoBtn.classList.remove('disabled');
@@ -2308,7 +2285,6 @@
                 }
             },
             
-            // Update reset button state
             updateResetButton() {
                 // Check if grid matches starting pattern
                 const isAtStart = this.grid.every((cell, i) => cell === this.startingPattern[i]);
@@ -2320,7 +2296,7 @@
                 }
             },
             
-            // Undo last move
+            // ===== UNDO/RESET FUNCTIONALITY =====
             undo() {
                 if (this.isAnimating || this.isComplete || this.moveHistory.length === 0) return;
                 
@@ -2352,22 +2328,38 @@
                 this.showMessage('Move undone');
             },
             
-            // Check if puzzle is solved (all tiles light)
+            resetTiles() {
+                if (this.isAnimating || this.isComplete) return;
+                
+                // Check if already at start
+                const isAtStart = this.grid.every((cell, i) => cell === this.startingPattern[i]);
+                if (isAtStart) return;
+                
+                this.grid = [...this.startingPattern];
+                this.currentMoves = 0; // Reset current moves counter
+                this.moveHistory = []; // Clear move history on reset
+                this.previewIndex = -1; // Clear preview
+                this.render();
+                this.saveState();
+                this.updateUndoButton();
+                this.updateResetButton();
+                this.showMessage('Reset to start');
+            },
+            
+            // ===== WIN CHECKING =====
             checkWin() {
                 return this.grid.every(cell => cell === true);
             },
             
-            // Check game state
             checkGameState() {
                 if (this.checkWin()) {
                     this.handleWin();
                 }
             },
             
-            // Handle win
             handleWin() {
                 this.isComplete = true;
-                const isPerfect = this.currentMoves === 5;
+                const isPerfect = this.currentMoves === 6;
                 const stats = this.updateStats(isPerfect);
                 this.saveState();
                 this.showCompletionBadge();
@@ -2412,7 +2404,7 @@
                 }, 500);
             },
             
-            // Show completion badge
+            // ===== COMPLETION BADGE =====
             showCompletionBadge() {
                 const existing = this.elements.subtitle.querySelector('.completed-indicator');
                 if (existing) return;
@@ -2423,7 +2415,7 @@
                 if (!this.checkWin()) {
                     badge.textContent = 'Incomplete';
                     badge.classList.add('failed');
-                } else if (this.currentMoves === 5) {
+                } else if (this.currentMoves === 6) {
                     badge.textContent = 'Perfect';
                     badge.classList.add('perfect');
                 } else {
@@ -2439,7 +2431,6 @@
                 this.elements.subtitle.appendChild(badge);
             },
             
-            // Disable gameplay
             disableGameplay() {
                 const cells = this.elements.playerGrid.querySelectorAll('.cell');
                 cells.forEach(cell => {
@@ -2454,58 +2445,7 @@
                 this.updateResetButton();
             },
             
-            // Reset tiles to starting pattern
-            resetTiles() {
-                if (this.isAnimating || this.isComplete) return;
-                
-                // Check if already at start
-                const isAtStart = this.grid.every((cell, i) => cell === this.startingPattern[i]);
-                if (isAtStart) return;
-                
-                this.grid = [...this.startingPattern];
-                this.currentMoves = 0; // Reset current moves counter
-                this.moveHistory = []; // Clear move history on reset
-                this.previewIndex = -1; // Clear preview
-                this.render();
-                this.saveState();
-                this.updateUndoButton();
-                this.updateResetButton();
-                this.showMessage('Reset to start');
-            },
-            
-            // Show/hide preview
-            showPreview(index) {
-                if (this.isAnimating || this.isComplete) return;
-                
-                const positions = this.getAffectedPositions(index);
-                positions.forEach(pos => {
-                    const cell = this.elements.playerGrid.children[pos];
-                    if (this.grid[pos]) {
-                        cell.classList.add('preview-dark');
-                    } else {
-                        cell.classList.add('preview-light');
-                    }
-                    
-                    // Add preview-affected to adjacent tiles (not the clicked one)
-                    if (pos !== index) {
-                        cell.classList.add('preview-affected');
-                    }
-                });
-                
-                // Add selected indicator to the clicked tile
-                const clickedCell = this.elements.playerGrid.children[index];
-                clickedCell.classList.add('preview-selected');
-            },
-            
-            hidePreview() {
-                const cells = document.querySelectorAll('.cell');
-                cells.forEach(cell => {
-                    cell.classList.remove('preview-dark', 'preview-light', 'preview-selected', 'preview-affected');
-                });
-                this.previewIndex = -1;
-            },
-            
-            // Solution handling
+            // ===== SOLUTION SYSTEM =====
             showSolution() {
                 if (!this.isComplete) {
                     // Show confirmation
@@ -2603,7 +2543,7 @@
                 this.elements.solutionOverlay.classList.remove('show');
             },
             
-            // Share results
+            // ===== SHARE FUNCTIONALITY =====
             shareResults() {
                 if (this.elements.shareBtn.classList.contains('disabled')) return;
                 
@@ -2629,8 +2569,8 @@
                     resultText += `❌ Couldn't solve today's puzzle.\n`;
                     resultText += `(Gave it my best with ${this.moves} moves)\n\n`;
                     resultText += `Try it yourself at https://squip.io`;
-                } else if (this.currentMoves === 5) {
-                    resultText += `⭐ PERFECT! Solved in 5 moves!\n`;
+                } else if (this.currentMoves === 6) {
+                    resultText += `⭐ PERFECT! Solved in 6 moves!\n`;
                     resultText += `(Took me ${this.moves} total moves to find it)\n\n`;
                     resultText += `Try and match my score at https://squip.io`;
                 } else {
@@ -2646,13 +2586,12 @@
                 });
             },
             
-            // Share from result modal
             shareResultsFromModal() {
                 this.shareResults();
                 this.closeResult();
             },
             
-            // UI helpers
+            // ===== UI HELPERS =====
             showMessage(text) {
                 this.elements.message.textContent = text;
                 this.elements.message.classList.add('show');
@@ -2672,13 +2611,12 @@
                 this.elements.resultOverlay.classList.remove('show');
             },
             
-            // Show result modal with current stats
             showResultModal() {
                 const stats = this.load('squip-stats') || { currentStreak: 0, longestStreak: 0, perfectScores: 0 };
                 const title = document.getElementById('result-title');
                 const subtitle = document.getElementById('result-subtitle');
                 
-                if (this.currentMoves === 5) {
+                if (this.currentMoves === 6) {
                     title.textContent = 'Perfect!';
                     subtitle.innerHTML = `You found the optimal solution!<br><br>`;
                 } else {
@@ -2739,6 +2677,7 @@
                 this.elements.statsOverlay.classList.remove('show');
             },
             
+            // ===== SETTINGS =====
             showSettings() {
                 // Set toggle state
                 const toggle = document.getElementById('mobile-preview-toggle');
@@ -2818,6 +2757,7 @@
                 }
             },
             
+            // ===== VISUAL EFFECTS =====
             createRipple(x, y) {
                 const ripple = document.createElement('div');
                 ripple.className = 'ripple';
@@ -2850,10 +2790,32 @@
                         setTimeout(() => particle.remove(), 1000);
                     }, i * 50);
                 }
+            },
+            
+            // ===== ANNOUNCEMENT BANNER =====
+            checkAnnouncementBanner() {
+                // Check if user has dismissed the 6-move announcement
+                const dismissed = this.load('squip-6move-banner-dismissed');
+                if (!dismissed) {
+                    // Show banner with a slight delay
+                    setTimeout(() => {
+                        this.elements.announcementBanner.classList.add('show');
+                        document.body.classList.add('banner-shown');
+                    }, 500);
+                }
+            },
+            
+            closeBanner() {
+                // Hide banner with animation
+                this.elements.announcementBanner.classList.remove('show');
+                document.body.classList.remove('banner-shown');
+                
+                // Save dismissal state
+                this.save('squip-6move-banner-dismissed', true);
             }
         };
         
-        // Initialize on load
+        // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', () => {
             Game.init();
             
